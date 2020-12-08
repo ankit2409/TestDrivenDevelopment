@@ -3,6 +3,10 @@ package com.TDD.calculator;
 import java.util.Arrays;
 
 public class Calculator {
+	public void validate(int num)throws NegetiveNumberException{  
+	     if(num<0)  
+	      throw new NegetiveNumberException("negatives not allowed");    
+	   }  
 	public int add(String s) {
 		String ar[]=null;
 		System.out.println(s.charAt(4));
@@ -14,7 +18,13 @@ public class Calculator {
 		System.out.println(Arrays.toString(ar));
 		int sum=0;
 		for(int i=0;i<ar.length;i++) {
-			sum+=Integer.parseInt(ar[i]);
+			int num=Integer.parseInt(ar[i]);
+			try {
+				validate(num);
+				sum+=num;
+			}catch(Exception m){
+				System.out.println(num+" "+m);
+			}
 		}
 		return sum;
 	}

@@ -9,8 +9,8 @@ class AddTest {
 	@Test
 	void test() {
 		Calculator calculator = new Calculator();
-		int result = calculator.add("8,9,1,2,4,2,3");
-		assertEquals(29,result);
+		int result = calculator.add("8,1\n2");
+		assertEquals(11,result);
 	}
 
 }
